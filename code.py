@@ -1,7 +1,6 @@
 from adafruit_magtag.magtag import MagTag
 import time
 from endpoint import endpoint_list
-import displayio
 from setup import splash_screen, display_setup, connect_to_wiFi, setup_requests, clear_screen, print_header
 from peripherals import set_lights, play_error_sound
 from api import api_check
@@ -16,6 +15,7 @@ ERROR_CHECK_PERIOD=300
 ERROR_LINE_HEADER_START=3
 ERROR_LINE_START=4
 ENPOINT_BASE="https://www.pickswise.com"
+# ENPOINT_BASE=""
 MAX_STRING_WIDTH=40
 SCREEN_WIDTH=48
 BACKGROUND_BMP="/bmps/apiwise.bmp"
@@ -62,7 +62,6 @@ while True:
 
       # now check to see if there were any errors
       error_state = True if len(endpoint_errors) > 0 else False
-      # time.sleep(20)
       if error_state:
         play_error_sound(magtag, "error")
         set_lights(magtag, "red", 0.5)
