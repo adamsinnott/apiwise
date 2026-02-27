@@ -25,3 +25,13 @@ There are certain limitations with the device at the moment. Long URLs are trunc
 Additionally there is a very weird problem with the MicroPython adafruit_requests library when a large response comes back and crashes the device. I am still triaging this.
 
 All in all a fun project. I'd never used MicroPython before and it's been years since I've used Python.
+
+## Local secrets setup
+
+This repo tracks `secrets.example.py` only. Create your local `secrets.py` from it and fill in real values:
+
+```bash
+cp secrets.example.py secrets.py
+```
+
+`secrets.py` is ignored by git and should never be committed.

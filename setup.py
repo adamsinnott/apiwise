@@ -32,7 +32,7 @@ def connect_to_wiFi(magtag):
   try:
     from secrets import secrets
   except ImportError:
-    disp("WiFi secrets are kept in secrets.py, please add them there!")
+    print("WiFi secrets are kept in secrets.py. Copy secrets.example.py to secrets.py and add your values.")
     raise
 
   connecting_details = "Connecting to %s" % secrets["ssid"]
